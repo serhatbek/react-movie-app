@@ -1,25 +1,16 @@
 import { useMoviesContext } from './MoviesContext';
+import './Movies.scss';
+import SingleMovie from '../SingleMovie/SingleMovie';
 
 const Movies = () => {
   const { movies } = useMoviesContext();
 
   console.log('home', movies);
   return (
-    <section className='movies'>
+    <section className='section-movies'>
       <div className='container'>
         {movies?.map((movie, index) => {
-          const { Title, Poster, Year, imdbID } = movie;
-
-          return (
-            <div className='movie-card' key={index}>
-              <figure>
-                <img src={Poster} alt={Title} />
-              </figure>
-              <h4>{Title}</h4>
-              <h5>{Year}</h5>
-              <span>{imdbID}</span>
-            </div>
-          );
+          return <SingleMovie movie={movie} key={index} />;
         })}
       </div>
     </section>
