@@ -1,16 +1,22 @@
 import { useMoviesContext } from './MoviesContext';
 import './Movies.scss';
-import SingleMovie from '../SingleMovie/SingleMovie';
+import MovieCard from '../MovieCard/MovieCard';
 
 const Movies = () => {
-  const { movies } = useMoviesContext();
+  const { movies, isLoading } = useMoviesContext();
 
-  console.log('home', movies);
+  if (isLoading) {
+    return <div className='loading'>Movies are loading...</div>;
+  }
+
   return (
     <section className='section-movies'>
       <div className='container'>
-        {movies?.map((movie, index) => {
-          return <SingleMovie movie={movie} key={index} />;
+        {movies?.map((movie) => {
+          // console.log(movie);
+          const { imdbID } = movie;
+
+          return <MovieCard movie={movie} key={imdbID} />;
         })}
       </div>
     </section>
