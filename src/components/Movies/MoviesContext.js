@@ -21,6 +21,7 @@ const MoviesProvider = ({ children }) => {
       if (response.data.Response === 'True') {
         setMovies(data);
         setIsLoading(false);
+        setError({ show: true, msg: '' });
       } else {
         setError({ show: true, msg: response.data.Error });
       }

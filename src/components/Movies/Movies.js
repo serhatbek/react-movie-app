@@ -6,7 +6,7 @@ const Movies = () => {
   const { movies, isLoading } = useMoviesContext();
 
   if (isLoading) {
-    return <div className='loading'>Movies are loading...</div>;
+    return <div class='lds-dual-ring'></div>;
   }
 
   return (
