@@ -23,7 +23,7 @@ const MoviesProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    dataMovies('Batman');
+    dataMovies();
   }, []);
 
   const values = {

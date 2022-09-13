@@ -1,9 +1,14 @@
-import React from 'react';
+import './SearchForm.scss';
 
 const SearchForm = () => {
   return (
-    <section className='searchForm'>
-      <div className='container'>SearchForm</div>
+    <section className='section-search'>
+      <div className='container'>
+        <form className='search-form'>
+          <input type='text' name='search' />
+          <button>Search</button>
+        </form>
+      </div>
     </section>
   );
 };
