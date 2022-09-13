@@ -23,6 +23,7 @@ const MoviesProvider = ({ children }) => {
         setIsLoading(false);
         setError({ show: true, msg: '' });
       } else {
+        setIsLoading(false);
         setError({ show: true, msg: response.data.Error });
       }
     } catch (error) {
@@ -52,4 +53,4 @@ const useMoviesContext = () => {
   return useContext(MoviesContext);
 };
 
-export { MoviesProvider, useMoviesContext };
+export { MoviesProvider, useMoviesContext, API_ENDPOINT };

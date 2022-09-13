@@ -6,16 +6,17 @@ const Movies = () => {
   const { movies, isLoading } = useMoviesContext();
 
   if (isLoading) {
-    return <div class='lds-dual-ring'></div>;
+    return <div className='lds-dual-ring'></div>;
   }
 
   return (
     <section className='section-movies'>
       <div className='container'>
-        {movies?.map((movie) => {
-          const { imdbID } = movie;
-          return <MovieCard movie={movie} key={imdbID} />;
-        })}
+        {movies.length > 0 &&
+          movies.map((movie) => {
+            const { imdbID } = movie;
+            return <MovieCard movie={movie} key={imdbID} />;
+          })}
       </div>
     </section>
   );
