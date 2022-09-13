@@ -2,7 +2,7 @@ import './SearchForm.scss';
 import { useMoviesContext } from '../Movies/MoviesContext';
 
 const SearchForm = () => {
-  const { query, setQuery, dataMovies } = useMoviesContext();
+  const { query, setQuery, error, dataMovies } = useMoviesContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const SearchForm = () => {
         <form onSubmit={handleSubmit} className='search-form'>
           <input
             type='text'
-            // value={query}
+            value={query}
             name='search'
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -21,6 +21,7 @@ const SearchForm = () => {
             Search
           </button>
         </form>
+        {error.show && <div className='search-error'>{error.msg}</div>}
       </div>
     </section>
   );

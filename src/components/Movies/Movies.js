@@ -13,9 +13,7 @@ const Movies = () => {
     <section className='section-movies'>
       <div className='container'>
         {movies?.map((movie) => {
-          // console.log(movie);
           const { imdbID } = movie;
-
           return <MovieCard movie={movie} key={imdbID} />;
         })}
       </div>

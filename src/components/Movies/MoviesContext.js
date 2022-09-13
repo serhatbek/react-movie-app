@@ -9,15 +9,21 @@ const MoviesContext = createContext();
 const MoviesProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [query, setQuery] = useState('Batman');
+  const [query, setQuery] = useState('sonic');
+  const [error, setError] = useState({ show: false, msg: '' });
 
   const dataMovies = async (title) => {
     setIsLoading(true);
     try {
       const response = await axios.get(title);
       const data = await response.data.Search;
-      setMovies(data);
-      setIsLoading(false);
+
+      if (response.data.Response === 'True') {
+        setMovies(data);
+        setIsLoading(false);
+      } else {
+        setError({ show: true, msg: response.data.Error });
+      }
     } catch (error) {
       console.log(error);
     }
@@ -33,6 +39,7 @@ const MoviesProvider = ({ children }) => {
     query,
     setQuery,
     dataMovies,
+    error,
   };
 
   return (
