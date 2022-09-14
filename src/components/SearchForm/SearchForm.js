@@ -17,9 +17,8 @@ const SearchForm = () => {
             name='search'
             onChange={(e) => setQuery(e.target.value)}
           />
-          <button type='submit' onClick={() => dataMovies(query)}>
-            Search
-          </button>
+          {/* <button type='submit' onClick={() => dataMovies(query)}> */}
+          <button type='submit'>Search</button>
         </form>
         {error.show && <div className='search-error'>{error.msg}</div>}
       </div>

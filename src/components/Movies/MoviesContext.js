@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, createContext, useContext, useEffect } from 'react';
 
-const API_ENDPOINT = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
+const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
 // const url = `https://www.omdbapi.com?apikey=22214b2e`;
 
 const MoviesContext = createContext();

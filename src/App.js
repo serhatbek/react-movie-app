@@ -1,6 +1,5 @@
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
-// import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import SingleMovie from './components/SingleMovie/SingleMovie';

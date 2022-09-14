@@ -45,12 +45,16 @@ const SingleMovie = () => {
   }, [imdbID]);
 
   if (isLoading) {
-    return <div className='lds-dual-ring'></div>;
+    return (
+      <div className='section-single-movie'>
+        <div className='lds-dual-ring'></div>
+      </div>
+    );
   }
 
   if (error.show) {
     return (
-      <div>
+      <div className='section-single-movie'>
         <h1 className='page-error'>{error.msg}</h1>
         <Link to={'/'}>Back to Home</Link>
       </div>
@@ -67,9 +71,9 @@ const SingleMovie = () => {
           <h2>{title}</h2>
           <h4>{actors}</h4>
           <p>{plot}</p>
-          <span>imdb:{rating}</span>
-          <span>{year}</span>
-          <span>{genre}</span>
+          <span>YEAR: {year}</span>
+          <span>IMDB RATING: {rating}</span>
+          <span>GENNRE: {genre}</span>
 
           <Link to={'/'} className='link-btn'>
             Back to Home
