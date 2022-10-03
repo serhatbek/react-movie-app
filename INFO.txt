@@ -1,5 +1,0 @@
-apiKey = acdbb119
-
-https://www.omdbapi.com/
-
-buradan film listesi uygulaması yapmanı isticem
